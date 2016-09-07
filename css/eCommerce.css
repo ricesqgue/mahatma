@@ -1,0 +1,118 @@
+.nombreEmpresa{
+	font-size: 20pt;
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+
+.socialIcons{
+	font-size: 14pt;
+	transition: all 0.5s
+}
+
+.socialIcons:hover{
+	font-size: 20pt;
+	cursor: pointer;
+}
+
+.textTransition{
+	transition: all 0.5s;
+}
+
+.textTransition:hover{
+	font-size: 20pt;
+	cursor: pointer;
+}
+
+.carrito{
+	font-size: 18pt;
+}
+
+.carritoCantidad{
+	font-size: 12pt;
+}
+
+.banner{
+	
+	
+}
+
+
+.label-info{
+	transition: all 0.5s;
+}
+
+
+.label-info:hover{
+	background-color: #ffa31a;
+	cursor: pointer;
+}
+
+
+.footer{
+	min-height: 300px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+}
+
+
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: url("../images/arrowUp.png") no-repeat center 50%;
+	background-size: 50px 50px;	
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+.bannerJumbo{
+	background-size: cover;
+	
+}
+
+.bannerJumbo .container{
+	border-radius: 10px;
+	color: white;
+	background-color: rgba(1,1,1,0.5);
+
+}
+
+.corazon{
+   animation:1s latido linear infinite;
+   color: red;
+}
+
+
+@keyframes latido{
+   0%{font-size: 12pt}
+   20%{font-size:12pt}
+   40%{font-size:14pt}
+   60%{font-size:16pt}
+   80%{font-size:14pt}
+   100%{font-size:12pt}
+}
+
+.lineaTitulo{
+	border-left: 4px solid #a1a1a1;  
+	padding-left: 10px; 
+	border-left-width: 5px; 
+	border-radius: 3px;
+}
+
+#errorFormulario{
+	color: red;
+	font-size: 1em;
+}
+
+#errorFormularioInicioSesion{
+	color: red;
+	font-size: 1em;
+}

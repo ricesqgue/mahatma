@@ -8,9 +8,11 @@
 	<meta charset="UTF-8">
 	<title>Mahatma librerías - Inicio</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/icons.css">
-	<link rel="stylesheet" href="css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/Cosmo/bootstrap.min.css">
+	<link rel="stylesheet" href="/eCommerce/css/icons.css">
+	<link rel="stylesheet" href="/eCommerce/css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/animate.css">
+	<link rel="icon" type="image/png" href="/eCommerce/images/icono.png" />
 </head>
 
 <body>

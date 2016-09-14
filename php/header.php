@@ -8,7 +8,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/eCommerce/"><img width="80px" src="images/logo.png" alt=""></a>
+					<a class="navbar-brand" href="/eCommerce/"><img width="90px" style="margin-top: -15px" src="images/logo.png" alt=""></a>
 				</div>
 		
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,21 +16,29 @@
 					<ul class="nav navbar-nav">
 						<li id="menuInicio"><a href="/eCommerce/"><span class="icon-home"> </span> INICIO</a></li>
 						<li id="menuNosotros"><a href="nosotros.php"><span class="icon-profile"></span> NOSOTROS</a></li>
-						<li id="menuCatalogo"><a href="#"><span class="icon-books"></span> CATÁLOGO</a></li>
+						<li id="menuCatalogo"><a href="catalogo.php"><span class="icon-books"></span> CATÁLOGO</a></li>
 						<li id="menuSucursales"><a href="sucursales.php"><span class="icon-location"></span> SUCURSALES </a></li>
 						<li id="menuContacto"><a href="contacto.php"><span class="icon-phone"></span> CONTACTO </a></li>
 	
 					</ul>
 	
 					<ul class="nav navbar-nav navbar-right">
-						<form class="navbar-form navbar-left" role="search">
+						<form class="navbar-form navbar-left" action="busqueda.php" method="get" id="formBusqueda" role="search">
 							<div class="form-group">
-								<input type="text" id="inputBuscar" name="inputBuscar" class="form-control" placeholder="Buscar...">
+								<input type="text" id="inputBuscar" name="busqueda" class="form-control" placeholder="Buscar...">
 							</div>
-							<button type="submit" id="btnBuscar" class="btn btn-default"><span class="icon-search"></span></button>
+							<button type="button" onclick="document.getElementById('formBusqueda').submit();" id="btnBuscar" class="btn btn-default"><span class="icon-search"></span></button>
 						</form>
 	
-						<li><a href="#" id="carrito"><span class="icon-cart carrito"> </span><span class="badge">0</span></a></li>
+						<li class="dropdown">
+							<a href="#" id="carrito" class="dropdown-toggle" data-toggle="dropdown">
+								<span class="icon-cart carrito"> </span><span id="cantidadCarrito" class="badge animated">0</span>
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" id="listaCarrito">
+								<li><a href="#">Carrito vacío</a></li>
+							</ul>
+						</li>
 						
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 

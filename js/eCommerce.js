@@ -1,3 +1,73 @@
+//Session Storage Carrito de compras.
+if(window.sessionStorage){
+	var libros;
+	if(sessionStorage.getItem("libros") !== null){
+		libros = JSON.parse(sessionStorage.getItem("libros"));
+		llenaListaCarrito();
+	}
+	else{
+		libros = new Array();
+	}
+
+	$("#cantidadCarrito").text(libros.length);
+}
+else{
+	console.log("Tu navegador no soporta session storage");
+}
+
+
+//Guarda libro en el carrito.
+function agregaCarrito(id,nombre,tipo){
+	$("#btnAgregaCarrito").button("loading");
+	libros.push({id: id, nombre: nombre, tipo: tipo});
+	sessionStorage.setItem("libros",JSON.stringify(libros));
+	console.log(JSON.parse(sessionStorage.getItem("libros")));
+	$("#cantidadCarrito").addClass("bounce");
+	$("#cantidadCarrito").text(libros.length);
+
+	setTimeout(function(){
+		$("#cantidadCarrito").removeClass("bounce");
+		$("#btnAgregaCarrito").button("reset");
+		llenaListaCarrito();
+		$("#msjAgregaCarrito").html("<span id='checkmark' class='animated fadeIn'><span style='color:green; margin-left:10px' class='icon-checkmark'>Agregado</span></span>")
+		setTimeout(function(){
+			$("#checkmark").removeClass("fadeIn");
+			$("#checkmark").addClass("fadeOut");
+		},2000);
+	},800);
+
+}
+
+function llenaListaCarrito(){
+	if(libros.length < 1){
+		$("#listaCarrito").html("<li><a>Carrito vacío</a></li>");
+	}
+	else{
+		$("#listaCarrito").html("");
+		for(var i=0; i<libros.length; i++){
+			$("#listaCarrito").html($("#listaCarrito").html() + "<li><a><span style='cursor:pointer' data-toggle='tooltip' title='Ver libro' onclick=\"window.location.href='infoLibro.php?idLibro="+libros[i].id+"'\" class='icon-book'>&nbsp;"+libros[i].nombre + " - " + libros[i].tipo +"</span> | <span data-toggle='tooltip' title='Eliminar del carrito' style='cursor:pointer' onclick='eliminaCarrito("+i+")'>&nbsp; &times;</span></a></li>");
+		}
+	}
+	$("#cantidadCarrito").removeClass("bounce");
+}
+
+function eliminaCarrito(index){
+	libros.splice(index,1);
+	sessionStorage.setItem("libros",JSON.stringify(libros));
+	console.log(JSON.parse(sessionStorage.getItem("libros")));
+	$("#cantidadCarrito").addClass("bounce");
+	$("#cantidadCarrito").text(libros.length);
+	setTimeout(function(){
+		$("#cantidadCarrito").removeClass("bounce"); 
+		llenaListaCarrito();
+	},800);
+
+}
+
+
+
+//**********************************************************************
+
 
 //Codigo que genera boton para subir el scroll hasta el top**************
 
@@ -29,10 +99,11 @@ $('a.back-to-top').click(function() {
 		
 		var nombre = $("#nombre").val();
 		var apellido = $("#apellido").val();
-		var email = $("#email").val();
-		var contrasena = $("#contrasena").val();
+		var email = $("#emailRegistro").val();
+		var contrasena = $("#contrasenaRegistro").val();
 		var contrasenaR = $("#contrasenaR").val();
 		var estado = $("#estado").val();
+
 		
 		if (nombre === "") {
 			
@@ -52,17 +123,17 @@ $('a.back-to-top').click(function() {
 		}
 		else if (contrasena === "") {
 			$("#errorFormulario").html("Inserte su contraseña<br>");
-			$("#formGroupContrasena").addClass("has-error");
+			$("#formGroupContrasenaReg").addClass("has-error");
 			$("#btnRegistra").button("reset");	
 		}
 		else if (contrasenaR === "") {
 			$("#errorFormulario").html("Repita su contraseña<br>");
-			$("#formGroupContrasena").addClass("has-error");
+			$("#formGroupContrasenaReg").addClass("has-error");
 			$("#btnRegistra").button("reset");	
 		}
 		else if (contrasena !== contrasenaR) {
 			$("#errorFormulario").html("Las contraseñas no coinciden<br>");
-			$("#formGroupContrasena").addClass("has-error");
+			$("#formGroupContrasenaReg").addClass("has-error");
 			$("#btnRegistra").button("reset");	
 		}
 		else if (estado === "") {
@@ -135,6 +206,42 @@ $('a.back-to-top').click(function() {
 
 
 
+//***************************************************************************
+
+
+//Comentarios 
+
+function comentarios(idLibro){
+	$.post("php/checaComentarios.php",{idLibro: idLibro}, function(data){
+		$("#comentarios").html(data.codigo);
+	},"json");
+}
+
+function enviaComentario(idLibro){
+	var comment = $("#comment").val();
+	if(comment.length < 10){
+		$("#errorComentario").html("<span id='msjComentario' class='animated fadeIn'><span style='color:red; margin-left:10px' class='icon-cross'> Comentario demasiado corto</span></span>");
+		setTimeout(function(){
+			$("#msjComentario").removeClass("fadeIn");
+			$("#msjComentario").addClass("fadeOut");
+		},2000);
+	}
+	else{
+		$.post("php/comenta.php",{idLibro: idLibro, comentario: comment},function(data){
+			if(data.exito !== undefined){
+				comentarios(idLibro);
+			}
+			else{
+				$("#errorComentario").html("<span id='msjComentario' class='animated fadeIn'><span style='color:red; margin-left:10px' class='icon-cross'>"+data.error+"</span></span>");
+				setTimeout(function(){
+					$("#msjComentario").removeClass("fadeIn");
+					$("#msjComentario").addClass("fadeOut");
+				},2000);
+			}
+		},"json");
+	}
+
+}
 //***************************************************************************
 
 

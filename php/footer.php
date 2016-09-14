@@ -38,7 +38,7 @@
 
 			<div class="col-md-4 text-center">
 				<h4>Encuentra el libro que buscas.</h4>
-				<h4 class="textTransition" data-toggle="tooltip" title="Catálogo"><span class="icon-books">Ver catálogo</h4>
+				<h4 class="textTransition" data-toggle="tooltip" title="Catálogo" onclick="window.location.href='catalogo.php'"><span class="icon-books">Ver catálogo</h4>
 			</div>
 		</div>
 		<br><br>
@@ -47,8 +47,8 @@
 				<h5 style="margin-top: 40px;">
 					Mahatma &reg;. Todos los derechos reservados. 2016
 				</h5>
-				<h5><small>Powered by Easyware&trade;. We build solutions </small></h5>
-				<span class="icon-heart corazon"></span>
+				<h5><small>Powered by Ricardo & Kevin &trade;. We build solutions </small></h5>
+				I <span class="icon-heart corazon"></span> BOOKS
 			</div>
 		</div>
 	</div>

@@ -7,9 +7,11 @@
 	<meta charset="UTF-8">
 	<title>Mahatma librerías - Nosotros</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/icons.css">
-	<link rel="stylesheet" href="css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/eCommerce/css/icons.css">
+	<link rel="stylesheet" href="/eCommerce/css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/animate.css">
+	<link rel="icon" type="image/png" href="/eCommerce/images/icono.png" />
 </head>
 
 <body>
@@ -46,7 +48,7 @@
 				Librerías Mahatma se fundó el 6 de febrero de 2006. Nuestro primer local fué ubicado en el centro de la ciudad de Aguascalientes.
 				</p>
 				<p>
-				Hoy existen 4 librerías Mahatma ubicadas en puntos estratégicos en la ciudad de Aguascalientes gracias al crecimiento que hemos tenido en los últimos años. (<a href="sucursales.html">Ver sucursales</a>)
+				Hoy existen 4 librerías Mahatma ubicadas en puntos estratégicos en la ciudad de Aguascalientes gracias al crecimiento que hemos tenido en los últimos años. (<a href="sucursales.php">Ver sucursales</a>)
 				</p>
 				<p>Nuestra clientela está compuesta principalmene por hombres y mujeres estudiantes, maestros, profesionales y todos los que sientes interés por la cultura y buscan información y entretenimiento.</p>
 				<p>Estamos orgullosos de nuestro trabajo, y por eso nos hemos propuesto continuar nuestro crecimiento, en beneficio de la cultura de nuestro país.
@@ -63,7 +65,7 @@
 			<div class="col-xs-12 col-md-6 text-justify">
 				<h1 class="lineaTitulo">Misión</h1>
 				<p>
-					Contribuir a la difusión de la cultura y entretenimiento, creando espacios propicios para el encuentro con el conocimiento. Además de ofrecer mejor servico y atención a nustros clientes. 
+					Contribuir a la difusión de la cultura y entretenimiento, creando espacios propicios para el encuentro con el conocimiento. Además de ofrecer mejor servico y atención a nuestros clientes. 
 				</p>
 			</div>
 			<div class="col-xs-12 col-md-5 col-md-offset-1 text-justify">

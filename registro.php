@@ -7,9 +7,11 @@
 	<meta charset="UTF-8">
 	<title>Mahatma librerías - Registro de usuario</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/icons.css">
-	<link rel="stylesheet" href="css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/eCommerce/css/icons.css">
+	<link rel="stylesheet" href="/eCommerce/css/eCommerce.css">
+	<link rel="stylesheet" href="/eCommerce/css/animate.css">
+	<link rel="icon" type="image/png" href="/eCommerce/images/icono.png" />
 </head>
 
 <body>
@@ -54,17 +56,17 @@
 					</div>
 					<div class="form-group" id="formGroupEmail">
 						<label for="email">Correo electrónico</label>
-						<input class="form-control" type="email" name="email" id="email" onfocus="limpiaErrorFormulario('formGroupEmail','errorFormulario')">
+						<input class="form-control" type="email" name="emailRegistro" id="emailRegistro" onfocus="limpiaErrorFormulario('formGroupEmail','errorFormulario')">
 						<br>
 					</div>
-					<div class="form-group" id="formGroupContrasena">
-						<label for="password">Contraseña</label>
-						<input class="form-control" type="password" name="contrasena" id="contrasena" 
-							onfocus="limpiaErrorFormulario('formGroupContrasena','errorFormulario')">
+					<div class="form-group" id="formGroupContrasenaReg">
+						<label for="contrasena">Contraseña</label>
+						<input class="form-control" type="password" name="contrasenaRegistro" id="contrasenaRegistro" 
+							onfocus="limpiaErrorFormulario('formGroupContrasenaReg','errorFormulario')">
 						<br>					
 						<label for="contrasenaR">Repetir contraseña</label>
 						<input class="form-control" type="password" name="contrasenaR" id="contrasenaR"
-							onfocus="limpiaErrorFormulario('formGroupContrasena','errorFormulario')">
+							onfocus="limpiaErrorFormulario('formGroupContrasenaReg','errorFormulario')">
 						<br>
 					</div>
 					<div class="form-group" id="formGroupEstado">

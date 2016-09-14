@@ -1,8 +1,8 @@
 <?php 
 	$nombre = $_POST["nombre"];
 	$apellido = $_POST["apellido"];
-	$email = $_POST["email"];
-	$contrasena = $_POST["contrasena"];
+	$email = $_POST["emailRegistro"];
+	$contrasena = $_POST["contrasenaRegistro"];
 	$estado = $_POST["estado"];
 
 

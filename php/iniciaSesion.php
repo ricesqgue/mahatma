@@ -34,6 +34,7 @@
 			$json["error"] = array('mensaje'=>'Correo electrónico y/o contraseña incorrecto(s).','formGroup'=>'Email');
 		}
 	}
+	$conn->close();
 
 	echo json_encode($json);
 

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require 'php/conexionMySQL.php';
 ?>
 
 <!DOCTYPE html>
@@ -63,31 +64,81 @@
 	<br>
 
 	<div class="container">
+		<?php 
+		$query = 'select id,nombre,precioFisico from libro order by rand() limit 3';
+		$resultset = $conn->query($query);
+
+		 ?>
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h1 class="panel-title">Novedades</h1>
+					<h1 class="panel-title">Recomendaciones</h1>
 				</div>
 				<div class="panel-body">
-					<div class="col-sm-4 col-md-4">
-						<img class="img-responsive" src="images/portada1.jpg" alt="">
-						<h2><p class="text-center"><span class="label label-info">$199</span></p></h2>
-						<br>
-					</div>
-					
-					<div class="col-sm-4 col-md-4">
-						<img class="img-responsive" src="images/portada1.jpg" alt="">
-						<h2><p class="text-center"><span class="label label-info">$199</span></p></h2>
-						<br>
-						
-					</div>
+					<?php 
+					while($libro = $resultset->fetch_assoc()){
+						echo '<div class="col-sm-4 col-md-4">' .
+								'<center><img class="img-responsive"  src="images/portadas/'.$libro["id"].'.jpg" alt=""></center>' .
+								'<h2 data-toggle="tooltip" title="Ver libro" onclick=\'window.location.href="infoLibro.php?idLibro='.$libro["id"].'"\'><p class="text-center"><span class="label label-info">$'.$libro["precioFisico"].'</span></p></h2>'.
+								'<br>'.
+							 '</div>';
+					}
+				 	?>
+									
+				</div>
+			</div>
+		</div>
+	</div>
 
-					<div class="col-sm-4 col-md-4">
-						<img class="img-responsive" src="images/portada1.jpg" alt="">
-						<h2><p class="text-center"><span class="label label-info">$199</span></p></h2>
-						<br>
-						
-					</div>					
+	<div class="container">
+		<?php 
+		$query = 'select id,nombre,precioFisico from libro where genero like "%Novela%" order by rand() limit 3;';
+		$resultset = $conn->query($query);
+
+		 ?>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">Novelas</h1>
+				</div>
+				<div class="panel-body">
+					<?php 
+					while($libro = $resultset->fetch_assoc()){
+						echo '<div class="col-sm-4 col-md-4">' .
+								'<center><img class="img-responsive"  src="images/portadas/'.$libro["id"].'.jpg" alt=""></center>' .
+								'<h2 data-toggle="tooltip" title="Ver libro" onclick=\'window.location.href="infoLibro.php?idLibro='.$libro["id"].'"\'><p class="text-center"><span class="label label-info">$'.$libro["precioFisico"].'</span></p></h2>'.
+								'<br>'.
+							 '</div>';
+					}
+				 	?>
+									
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="container">
+		<?php 
+		$query = 'select id,nombre,precioFisico from libro where genero like "%Filosofía%" order by rand() limit 3;';
+		$resultset = $conn->query($query);
+
+		 ?>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">Filosofía</h1>
+				</div>
+				<div class="panel-body">
+					<?php 
+					while($libro = $resultset->fetch_assoc()){
+						echo '<div class="col-sm-4 col-md-4">' .
+								'<center><img class="img-responsive" src="images/portadas/'.$libro["id"].'.jpg" alt=""></center>' .
+								'<h2 data-toggle="tooltip" title="Ver libro" onclick=\'window.location.href="infoLibro.php?idLibro='.$libro["id"].'"\'><p class="text-center"><span class="label label-info">$'.$libro["precioFisico"].'</span></p></h2>'.
+								'<br>'.
+							 '</div>';
+					}
+				 	?>
+									
 				</div>
 			</div>
 		</div>

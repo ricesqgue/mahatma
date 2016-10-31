@@ -35,7 +35,7 @@
 		if($resultSet->num_rows >0){
 			?>
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-10 col-md-offset-1">
 					<br><br>
 					<div class="table-responsive " style="padding-left:20px; padding-right:20px">
 					<table class="table table-striped " id="tableSearch">
@@ -51,8 +51,8 @@
 								<tr>
 									<td>
 										<div class="row">
-											<div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-4" id="divImagenLibro">
-												<img class="img-responsive img-thumbnail" width="200px" src="images/portadas/<?php echo $libro['rutaImagen'] ?>" alt="">
+											<div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-3" id="divImagenLibro">
+												<img class="img-responsive img-thumbnail" width="200px" src="images/portadas/<?php echo $libro['rutaImagen'] ?>" alt="" data-toggle="tooltip" title="Ver libro" onclick="window.location.href='<?php echo "infoLibro.php?idLibro=". $libro["id"] ?>'" style='cursor:pointer' >
 											</div>
 
 											<div class="col-sm-offset-1 col-sm-10 col-md-6" id="divInfoLibro">
@@ -61,6 +61,7 @@
 												<ul>												
 										
 													<li><h5>Autor: <?php echo $libro['nombreAutor'] ?></h5></li>
+													<li><h5>Género: <?php echo $libro['genero'] ?></h5></li>
 													<li><h5>Editorial: <?php echo $libro['nombreEditorial'] ?></h5></li>
 													<li><h5>Precio (físico): $<?php echo $libro['precioFisico'] ?></h5></li>
 													<li><h5>Precio (digital): $<?php echo $libro['precioDigital'] ?></h5></li>

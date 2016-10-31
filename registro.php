@@ -54,9 +54,9 @@
 							onfocus="limpiaErrorFormulario('formGroupApellido','errorFormulario')">
 						<br>
 					</div>
-					<div class="form-group" id="formGroupEmail">
+					<div class="form-group" id="formGroupEmailReg">
 						<label for="email">Correo electrónico</label>
-						<input class="form-control" type="email" name="emailRegistro" id="emailRegistro" onfocus="limpiaErrorFormulario('formGroupEmail','errorFormulario')">
+						<input class="form-control" type="email" name="emailRegistro" id="emailRegistro" onfocus="limpiaErrorFormulario('formGroupEmailReg','errorFormulario')">
 						<br>
 					</div>
 					<div class="form-group" id="formGroupContrasenaReg">
@@ -69,10 +69,24 @@
 							onfocus="limpiaErrorFormulario('formGroupContrasenaReg','errorFormulario')">
 						<br>
 					</div>
+					<div class="form-group" id="formGroupEdad">
+						<label for="email">Edad</label>
+						<input class="form-control" type="number" name="edad" id="edad" onfocus="limpiaErrorFormulario('formGroupEdad','errorFormulario')">
+						<br>
+					</div>
+					<div class="form-group" id="formGroupGenero">
+						<label for="email">Género</label>
+						<select class="form-control" name="genero" id="genero" onfocus="limpiaErrorFormulario('formGroupGenero','errorFormulario')">
+							<option value="M">Masculino</option>
+							<option value="F">Femenino</option>
+						</select>
+
+						<br>
+					</div>
 					<div class="form-group" id="formGroupEstado">
 						<label for="estado">Estado</label>
 						<select class="form-control" name="estado" id="estado" onfocus="limpiaErrorFormulario('formGroupEstado','errorFormulario')">
-							<option value="1">Aguascalientes</option>
+								<option value="1">Aguascalientes</option>
 								<option value="2">Baja California</option>
 
 								<option value="3">Baja California Sur</option>

@@ -57,7 +57,8 @@
 								<?php 
 									if(isset($_SESSION['nombre'])){ 
 									?>
-										<li><a href="#">Mi cuenta</a></li>
+										<li><a href="misCompras.php">Mis compras</a></li>
+										<li><a href="misLibros.php">Mis libros digitales</a></li>
 										<li><a href="php/cerrarSesion.php">Cerrar sesión</a></li>
 									<?php	
 									}
@@ -114,5 +115,7 @@
 		<?php
 	}
  ?>
-
+<form action="carrito.php" id="formCarrito" method="POST">
+	<input type="hidden" id="jsonLibro" name="jsonLibro" value="">
+</form>
 		   

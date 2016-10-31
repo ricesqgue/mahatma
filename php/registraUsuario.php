@@ -4,6 +4,10 @@
 	$email = $_POST["emailRegistro"];
 	$contrasena = $_POST["contrasenaRegistro"];
 	$estado = $_POST["estado"];
+	$edad = $_POST["edad"];
+	$genero = $_POST["genero"];
+
+
 
 
 	$json = array();
@@ -33,7 +37,7 @@
 					$json['error'] = array('mensaje'=>'Ese correo electrónico ya está registrado','formGroup'=>'Email');			
 				}
 				else{
-					$query = "INSERT INTO usuario VALUES (default, '".$nombre."','".$apellido."','".$email."',md5('".$contrasena."'),".$estado.",DATE(now()))";					
+					$query = "INSERT INTO usuario VALUES (default, '".$nombre."','".$apellido."','".$email."',md5('".$contrasena."'),".$estado.",DATE(now()),". $edad.",'".$genero."')";					
 					if ($conn->query($query) === true ) {
 						$json['exito'] = 'Usuario registrado correctamente';
 					}else{
